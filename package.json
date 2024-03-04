@@ -1,0 +1,23 @@
+{
+  "name": "example-with-tailwindcss",
+  "type": "module",
+  "scripts": {
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
+    "generate:pdf": "bun run ./generatePdf.ts"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.12.5",
+    "@solidjs/start": "^0.6.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.26",
+    "puppeteer": "^22.3.0",
+    "solid-js": "^1.8.15",
+    "tailwindcss": "^3.3.3",
+    "vinxi": "^0.3.9"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
