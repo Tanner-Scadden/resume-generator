@@ -105,7 +105,7 @@ const experiences: Experience[] = [
     company: "Webaholics",
     logo: "https://media.licdn.com/dms/image/C510BAQEumRI6xBZymw/company-logo_200_200/0/1631375170071?e=1717632000&v=beta&t=dagpTuUdS1PSVRVILks1etktiijqV_FjZCqRVoiNBps",
     startDate: "March 2021",
-    endDate: "Janurary 2022",
+    endDate: "January 2022",
     points: [
       "Led a team of 5 engineers to migrate a legacy application to a modern SAAS platform.",
       "Implemented a modern tech stack consisting of React, Express, and Postgres.",
