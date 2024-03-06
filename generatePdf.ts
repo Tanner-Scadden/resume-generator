@@ -1,5 +1,19 @@
 import puppeteer from "puppeteer";
 import fs from "fs/promises";
+import os from "node:os";
+import { $ } from "bun";
+import { parseArgs } from "util";
+
+const { values } = parseArgs({
+  args: Bun.argv,
+  options: {
+    dist: {
+      type: "string",
+    },
+  },
+  strict: true,
+  allowPositionals: true,
+});
 
 export const generatePdf = async () => {
   // Launch the browser and open a new blank page
@@ -18,9 +32,23 @@ export const generatePdf = async () => {
 
   await browser.close();
 
-  await fs.writeFile("./resume.pdf", pdf);
+  const dist = values.dist || `${__dirname}/resume.pdf`;
 
-  console.log("Done");
+  await fs.writeFile(dist, pdf);
+
+  if (os.platform() === "win32") {
+    await $`start ${dist}`;
+  }
+
+  if (os.platform() === "darwin") {
+    await $`open ${dist}`;
+  }
+
+  if (os.platform() === "linux") {
+    await $`xdg-open ${dist}`;
+  }
+
+  console.log(`PDF saved to ${dist}`);
 };
 
 generatePdf();

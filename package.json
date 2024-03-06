@@ -5,7 +5,7 @@
     "dev": "vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start",
-    "generate:pdf": "bun run ./generatePdf.ts"
+    "generate:pdf": "bun run ./generatePdf.ts --dist ~/Downloads/TannerScadden-Resume.pdf"
   },
   "dependencies": {
     "@solidjs/router": "^0.12.5",
@@ -19,5 +19,8 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "bun-types": "^1.0.30"
   }
 }
